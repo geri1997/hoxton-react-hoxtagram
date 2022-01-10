@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Logo from "./Components/Logo";
 import Image from "./Components/Image";
 
+import '../styles/App.css'
+
 function App() {
   const [images, setImages] = useState([]);
 

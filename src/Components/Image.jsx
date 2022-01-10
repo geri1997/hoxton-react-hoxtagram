@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
+import '../../styles/image.css'
 
 const Image = ({image}) => {
   return (
