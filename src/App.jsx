@@ -6,6 +6,7 @@ import "../styles/App.css";
 
 function App() {
   const [images, setImages] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('')
   function addNewPost(title, url) {
     fetch("http://localhost:3000/images", {
       method: "POST",
@@ -33,11 +34,20 @@ function App() {
       .then((images) => setImages(images));
   }, []);
 
+  let imagesToDisplay =[...images]
+  function search(e){
+    setSearchTerm(e.target.value)
+  }
+  if(searchTerm){
+    imagesToDisplay = imagesToDisplay.filter(image=>image.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
   return (
     <React.Fragment>
       <Logo />
 
       <section className="image-container">
+        <label htmlFor="search">Search:</label><input type="text" name="search" id="search" onChange={search} />
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -45,6 +55,7 @@ function App() {
             e.target.reset();
           }}
         >
+          <h5>Post new image</h5>
           <span>Title:</span>
           <input type="text" required name="title" />
           <br />
@@ -53,7 +64,7 @@ function App() {
           <button hidden></button>
         </form>
         
-        {images.map((image) => (
+        {imagesToDisplay.map((image) => (
           <Image
             key={image.id}
             image={image}
