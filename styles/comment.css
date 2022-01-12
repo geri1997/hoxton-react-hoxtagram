@@ -2,3 +2,8 @@
     margin: 2px 0;
     letter-spacing: 0.2px;
   }
+
+#comment-user{
+  padding-right: 1rem;
+  font-weight: 700;
+}

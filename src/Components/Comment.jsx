@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/comment.css";
 
-const Comment = ({ comment, image, setImages, images }) => {
+const Comment = ({ comment, image, setImages, images, user }) => {
   function deleteComment(comment) {
     let imagesCopy = [...images];
     let index = images.findIndex((el) => image.id === el.id);
@@ -10,15 +10,26 @@ const Comment = ({ comment, image, setImages, images }) => {
     );
     imagesCopy[index].comments = newComments;
     setImages(imagesCopy);
-    fetch('http://localhost:3000/comments/'+ comment.id,{
-      method:'DELETE'
-    })
+    fetch("http://localhost:3000/comments/" + comment.id, {
+      method: "DELETE",
+    });
   }
 
   return (
     <li>
+      <span id="comment-user">{comment.userName}</span>
       {comment.content}{" "}
-      <button onClick={() => deleteComment(comment)}>X</button>
+      {user?.username === comment.userName ? (
+        <button
+          onClick={() => {
+            deleteComment(comment);
+          }}
+        >
+          X
+        </button>
+      ) : (
+        <></>
+      )}
     </li>
   );
 };

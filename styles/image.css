@@ -1,5 +1,16 @@
 
+.image-info{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+}
 
+h2.username{
+  font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000dd;
+}
 
 
 .image-card {
@@ -17,7 +28,6 @@
 
 .title {
   text-align: left;
-  padding: 15px 10px;
   font-size: 0.9rem;
   font-weight: 600;
   color: #000000dd;

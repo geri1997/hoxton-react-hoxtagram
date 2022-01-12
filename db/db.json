@@ -2,42 +2,79 @@
   "images": [
     {
       "id": 1,
+      "userName": "geri1",
       "title": "Coder dog",
-      "likes": 15,
+      "likes": 18,
       "image": "./assets/coder-dog.png"
     },
     {
       "id": 2,
+      "userName": "testgeri",
       "title": "Coder cats",
-      "likes": 8,
+      "likes": 12,
       "image": "./assets/coder-cat.jpeg"
+    },
+    {
+      "title": "Browser support",
+      "likes": 5,
+      "image": "https://i.redd.it/n0f8xxe763a81.png",
+      "userName": "testgeri",
+      "id": 3
     }
   ],
   "comments": [
     {
       "id": 1,
       "content": "What a cute dog!",
-      "imageId": 1
+      "imageId": 1,
+      "userName": "geri1"
     },
     {
       "id": 2,
       "content": "He has the paws for this!",
-      "imageId": 2
+      "imageId": 2,
+      "userName": "testgeri"
     },
     {
       "id": 3,
       "content": "Someone's in trouble!",
-      "imageId": 2
+      "imageId": 2,
+      "userName": "geri1"
     },
     {
       "imageId": 1,
       "content": "Funny dog!!",
-      "id": 4
+      "id": 4,
+      "userName": "testgeri"
     },
     {
       "imageId": 1,
       "content": "Hes a good boy!!",
-      "id": 5
+      "id": 5,
+      "userName": "geri1"
+    },
+    {
+      "imageId": 3,
+      "content": "sdf",
+      "userName": "geri1",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "username": "testgeri",
+      "password": "test",
+      "id": 1,
+      "likedImages": []
+    },
+    {
+      "username": "geri1",
+      "password": "geri",
+      "id": 2,
+      "likedImages": [
+        2,
+        1
+      ]
     }
   ]
 }
